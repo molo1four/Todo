@@ -33,6 +33,6 @@ exports.checkComp = async (req, res, next) => {
     res.status(200).json({ success: true, result: result });
   } catch (e) {
     console.log(e);
-    res.status(500).json({ success: false });
+    res.status(500).json({ success: false, result: e });
   }
 };
