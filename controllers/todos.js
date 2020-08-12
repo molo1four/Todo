@@ -22,7 +22,7 @@ exports.getTodos = async (req, res, next) => {
 // @route   POST /api/v1/todos/:id
 // @parameters
 exports.checkComp = async (req, res, next) => {
-  let id = req.param.id;
+  let id = req.body.id;
   console.log(id);
   let completed = req.body.completed;
   console.log(completed);
