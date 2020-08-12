@@ -19,15 +19,13 @@ exports.getTodos = async (req, res, next) => {
 };
 
 // @desc    완료여부 체크 및 해제
-// @route   POST /api/v1/todos/:id
+// @route   POST /api/v1/todos/check/
 // @parameters
 exports.checkComp = async (req, res, next) => {
-  let id = req.body.todo_id;
+  let id = req.query.id;
   console.log(id);
-  let completed = req.body.completed;
-  console.log(completed);
 
-  let query = `update todo set completed = ${completed} where id = ${id}`;
+  let query = `UPDATE todo SET completed = if( completed = '1', '0', '1' ) WHERE id = ${id}`;
   console.log(query);
 
   try {
