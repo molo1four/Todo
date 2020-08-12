@@ -2,8 +2,6 @@ const connection = require("../db/mysql_connection");
 const validator = require("validator");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const crypto = require("crypto");
-const { query } = require("../db/mysql_connection");
 
 // @desc    회원가입
 // @route   POST /api/v1/users
